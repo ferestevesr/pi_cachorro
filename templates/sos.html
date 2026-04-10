@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="/static/css/stylesos.css">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SOS Segurança</title>
+
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_AQUI&libraries=places"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🚨 SOS</h1>
+    <nav>
+      <a href="formulario.html">Denúncia</a>
+      <a href="delegacia.html">Delegacias</a>
+    </nav>
+  </header>
+
+  <!-- SEÇÃO SOS -->
+  <section class="sos">
+    <button class="sos-btn" onclick="alert('clicou')">ATIVAR SOS</button>
+    <p id="status">🟢 Seguro</p>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section id="formulario" class="form-section">
+    <h2>Registrar Ocorrência</h2>
+
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="text" placeholder="Endereço" id="endereco" required>
+      <textarea placeholder="Descreva o ocorrido..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- MAPA -->
+  <section id="mapa" class="map-section">
+    <h2>Delegacias próximas</h2>
+    <button onclick="buscarDelegacias()"> <a href="delegacia.html">Buscar Delegacias</a></button>
+    <div id="map"></div>
+  </section>
+
+  <script src="/static/js/mapa.js"></script>
+  <script src="/static/js/sos.js"></script>
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

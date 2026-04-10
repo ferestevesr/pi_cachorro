@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+  }
+  
+  /* HEADER */
+  header {
+    background: #111;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* NAV */
+  nav {
+    background: #222;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: red;
+  }
+  
+  /* CONTAINER */
+  .container {
+    padding: 20px;
+  }
+  
+  /* ALERTAS */
+  #alertas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .alerta-card {
+    background: white;
+    border-left: 5px solid red;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: 0.2s;
+  }
+  
+  .alerta-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* TEXTO */
+  .alerta-card p {
+    margin: 5px 0;
+  }

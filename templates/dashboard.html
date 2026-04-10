@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <h2>Painel de Alertas</h2>
+  </header>
+
+  <nav>
+    <a href="/sos">SOS</a>
+    <a href="/denuncia">Denúncia</a>
+    <a href="/ajuda">Ajuda</a>
+  </nav>
+
+  <div class="container">
+    <div id="alertas"></div>
+  </div>
+  <script>
+    function carregarAlertas() {
+      fetch("/alertas")
+        .then(res => {
+          if (!res.ok) throw new Error("Erro ao buscar alertas");
+          return res.json();
+        })
+        .then(data => {
+          let html = "";
+
+          data.forEach(a => {
+            html += `
+          <div class="alerta-card">
+            <p>📍 ${a.localizacao}</p>
+            <p>📝 ${a.mensagem}</p>
+          </div>
+        `;
+          });
+
+          document.getElementById("alertas").innerHTML = html;
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+
+    // atualiza sozinho
+    setInterval(carregarAlertas, 3000);
+    carregarAlertas();
+  </script>
+</body>
+
+</html>

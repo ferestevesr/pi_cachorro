@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.registro.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Criar Conta</h2>
+
+    {% if erro %}
+    <p class="erro">{{ erro }}</p>
+    {% endif %}
+
+    <form method="POST" action="/registro">
+
+        <input type="text" name="nome" placeholder="Seu nome" required>
+
+        <input type="email" name="email" placeholder="Seu email" required>
+
+        <input type="password" name="senha" placeholder="Crie uma senha" required>
+
+        <input type="text" name="telefone" placeholder="Telefone" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <p>Já tem conta?</p>
+    <a href="/login">
+        <button>Entrar</button>
+    </a>
+
+</div>
+
+<script>
+    setTimeout(() => {
+        const erro = document.querySelector('.erro');
+        if (erro) erro.style.display = 'none';
+    }, 3000);
+    </script>
+</body>
+</html>

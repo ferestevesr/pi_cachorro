@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: #0a0a0a;
+  color: white;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #111;
+  border-bottom: 1px solid #222;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: red;
+}
+
+/* SOS */
+.sos {
+  text-align: center;
+  padding: 40px;
+}
+
+.sos-btn {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: none;
+  background: red;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 30px red;
+}
+
+/* FORM */
+.form-section {
+  padding: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+/* MAPA */
+.map-section {
+  padding: 40px;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+/* ALERTA */
+body.alerta {
+  background: radial-gradient(circle, #200000, #000);
+}
