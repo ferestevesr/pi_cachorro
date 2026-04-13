@@ -1,55 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link rel="stylesheet" href="/static/css/stylesos.css">
-
 <head>
   <meta charset="UTF-8">
-  <title>SOS Segurança</title>
-
-  <!-- Google Maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_AQUI&libraries=places"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplicativo SOS para apoio e segurança de mulheres">
+  <title>SOS Mulher</title>
+  <link rel="stylesheet" href="/static/css/stylesos.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🚨 SOS</h1>
-    <nav>
-      <a href="formulario.html">Denúncia</a>
-      <a href="delegacia.html">Delegacias</a>
-    </nav>
-  </header>
+<header>
+  <h1>SOS Mulher</h1>
+  <nav>
+    <a href="/login">Login</a>
+    <a href="/registro">Registro</a>
+    <a href="#denuncia">Denunciar</a>
+    <a href="/conta">Conta</a>
+  </nav>
+</header>
 
-  <!-- SEÇÃO SOS -->
-  <section class="sos">
-    <button class="sos-btn" onclick="alert('clicou')">ATIVAR SOS</button>
-    <p id="status">🟢 Seguro</p>
+<main>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <h2>SOS Mulher</h2>
+
+  <!-- BOTÃO SOS AGORA FUNCIONAL -->
+  <button onclick="enviarSOS()" class="sos-btn">
+    PEDIR AJUDA
+  </button>
+
+  <p>Clique para enviar sua localização e pedir ajuda imediata</p>
+</section>
+
+<!-- AÇÕES -->
+<section id="acoes" class="acoes">
+  <h2>Ações rápidas</h2>
+<div class="acoes-grid">
+  <!-- LOCALIZAÇÃO -->
+  <button onclick="enviarLocalizacao()" class="card">
+    <span class="icon">
+      <i data-lucide="map-pin"></i>
+    </span>
+  
+    <span class="text">
+      Localização
+    </span>
+  </button>
+
+  <!-- LIGAÇÃO -->
+  <a href="tel:190" class="card red">
+    <span class="icon">
+      <i data-lucide="phone"></i>
+    </span>
+  
+    <span class="text">
+      Ligar 190
+    </span>
+  </a>
+
+  <!-- CONTATOS -->
+  <a href="/contatos" class="card">
+    <span class="icon">
+      <i data-lucide="users"></i>
+    </span>
+    
+    <span class="text">
+      Contatos
+    </span>
+  </a>
+  </div> 
+</section>
+
+<!-- DENÚNCIA -->
+<section id="denuncia" class="denuncia">
+    <h2>Fazer denúncia</h2>
+  
+    <form id="formDenuncia">
+      
+      <label for="desc">Descrição</label>
+      <textarea id="desc" required></textarea>
+  
+      <label for="end">Endereço</label>
+      <input id="end" type="text" required>
+  
+      <button type="submit">Enviar denúncia</button>
+    </form>
   </section>
 
-  <!-- FORMULÁRIO -->
-  <section id="formulario" class="form-section">
-    <h2>Registrar Ocorrência</h2>
-
-    <form>
-      <input type="text" placeholder="Nome" required>
-      <input type="text" placeholder="Endereço" id="endereco" required>
-      <textarea placeholder="Descreva o ocorrido..." required></textarea>
+<!-- CHAT -->
+<section id="chat" class="chat">
+    <h2>Chat de apoio</h2>
+  
+    <div id="chatBox" class="chat-box"></div>
+  
+    <form id="formChat">
+      <input id="msg" type="text" required>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <!-- MAPA -->
-  <section id="mapa" class="map-section">
-    <h2>Delegacias próximas</h2>
-    <button onclick="buscarDelegacias()"> <a href="delegacia.html">Buscar Delegacias</a></button>
-    <div id="map"></div>
-  </section>
+<!-- INFO -->
+<section id="info" class="info">
+  <h2>Informações</h2>
 
-  <script src="/static/js/mapa.js"></script>
-  <script src="/static/js/sos.js"></script>
-  <script src="/static/js/main.js"></script>
+  <div class="cards">
+    <a href="/info/psicologica" class="card">Violência psicológica</a>
+    <a href="/info/sinais" class="card">Sinais de abuso</a>
+    <a href="/info/ajuda" class="card">Como pedir ajuda</a>
+  </div>
+</section>
 
+<!-- CONTATOS -->
+<section id="contatos" class="contatos">
+  <h2>Contatos de emergência</h2>
+  <div class="cards">
+    <ul>
+      <li><a href="tel:190">Polícia - 190</a></li>
+      <li><a href="tel:180">Central Mulher - 180</a></li>
+      <li><a href="tel:192">SAMU - 192</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 SOS Mulher</p>
+</footer>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 </body>
-
 </html>
