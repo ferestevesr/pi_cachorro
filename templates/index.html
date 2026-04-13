@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="/static/css/stylesos.css">
+    ...existing code...
 </head>
-
 <body>
+    ...existing code...
+    <!-- Hero Section -->
+    ...existing code...
 
-<h1>Bem-vindo</h1>
+    <!-- Features / Includes: juntar outros htmls -->
+    <section class="container my-5" id="content-area">
+        <h2 class="text-center mb-4">Conteúdo</h2>
 
-<a href="/login">
-  <button>Login</button>
-</a>
+        {# Inclua aqui os templates das páginas - garanta que esses arquivos sejam parciais (sem <html> completo) #}
+        {% include 'sos.html' %}
+        {% include 'registro.html' %}
+        {% include 'denuncia.html' %}
+        {% include 'conta.html' %}
+        {% include 'dashboard.html' %}
+    </section>
 
-<a href="/registro">
-  <button>Registrar</button>
-</a>
+    ...existing code...
 
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Exemplo: navbar dinâmico via Jinja -->
+    <script>
+        // Opcional: caso precise de interação JS adicional
+    </script>
 </body>
 </html>

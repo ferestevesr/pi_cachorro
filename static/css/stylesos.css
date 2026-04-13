@@ -1,95 +1,255 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: #0a0a0a;
-  color: white;
+  background: #f5f5f7;
+  color: #333;
+}
+
+/* CONTAINER CENTRAL */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* HEADER */
 header {
+  background: white;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-  background: #111;
-  border-bottom: 1px solid #222;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 18px;
+  color: #7c3aed;
+  
+}
+
+nav {
+  display: flex;
+  gap: 10px;
 }
 
 nav a {
-  margin-left: 20px;
   text-decoration: none;
-  color: white;
-  transition: 0.2s;
+  color: #555;
+  font-size: 14px;
 }
 
-nav a:hover {
-  color: red;
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* SOS */
-.sos {
-  text-align: center;
-  padding: 40px;
+.hero h2 {  
+  margin-bottom: 20px;
 }
 
 .sos-btn {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
+
   border-radius: 50%;
-  border: none;
-  background: red;
-  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 18px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  color: white;
+
+  box-shadow: 0 0 30px rgba(192,132,252,0.6);
+
   cursor: pointer;
-  box-shadow: 0 0 30px red;
+  border: none;
 }
 
-/* FORM */
-.form-section {
-  padding: 40px;
+.sos-btn:hover {
+  transform: scale(1.03);
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* AÇÕES */
+.acoes {
+  margin-top: 30px;
+}
+
+.acoes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.acoes h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  flex-direction:  column;
+  text-align: center;
+  width: 100%;
+  padding: 20px 10px;
+  margin-bottom: 12px;
+
+  border-radius: 16px;
+  background: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card i {
+  width: 22px;
+  height: 22px;
+  color: #a855f7;
+  stroke-width: 2.2;
+}
+
+.card:hover i {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card.red {
+  background: #ef4444;
+  color: white;
+}
+
+.card.red i {
+  color: white;
+}
+
+/* DENÚNCIA */
+.denuncia {
+  margin-top: 30px;
+}
+
+.denuncia h2 {
+  margin-bottom: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
 }
 
-input, textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #111;
-  color: white;
+textarea,
+input {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
 }
 
-button {
-  padding: 10px;
+button[type="submit"] {
+  padding: 12px;
   border: none;
-  border-radius: 8px;
-  background: red;
+  border-radius: 10px;
+  background: #7c3aed;
   color: white;
   cursor: pointer;
 }
 
-/* MAPA */
-.map-section {
-  padding: 40px;
+/* CHAT */
+.chat {
+  margin-top: 30px;
 }
 
-#map {
-  width: 100%;
-  height: 400px;
-  margin-top: 20px;
-  border-radius: 12px;
+.chat-box {
+  background: white;
+  height: 150px;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-/* ALERTA */
-body.alerta {
-  background: radial-gradient(circle, #200000, #000);
+
+/* INFO */
+.info {
+  margin-top: 30px;
+}
+
+.cards .card {
+  margin-bottom: 10px;
+}
+
+/* CONTATOS */
+.contatos {
+  margin-top: 30px;
+}
+
+.contatos ul {
+  list-style: none;
+}
+
+.contatos li {
+  margin-bottom: 8px;
+}
+
+.contatos a {
+  text-decoration: none;
+  color: #7c3aed;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #999;
+} 
+
+/*Ações efeitos*/
+.sos-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 30px rgba(168, 85, 247, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+  }
+}
+/* Responsivo */
+@media (max-width: 480px) {
+  .acoes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
